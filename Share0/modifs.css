@@ -1,0 +1,24 @@
+/* On créé une nouvel police en chargeant un fichier .otf*/
+@font-face {
+    font-family: 'quicksand';
+    src: url('Quicksand-Regular.otf.');
+}
+body
+{
+	background-color: rgb(240,240,240); /*l'arrière plan est fixé à une couleur gris clair*/
+	font-family: 'quicksand', Arial, sans-serif; /*la police quicksand est choisie mais on met la police Arial  en backup au cas où*/
+
+}
+.principal
+{
+	width: 100em;/*On fixe la largeur du corps principal */
+	margin: auto;/*On centre le corps principal*/
+	border: 2px solid rgba(140,140,140,0.7); /*On créé une bordure grise*/
+	text-align: center;/* le texte à l'intérieur de ce div sera centré*/
+	background-color: rgb(27,41,99); /*On fixe l'arrière plan à un bleu*/
+	color: white; /* La couleur du texte sera blanche */
+}
+a
+{
+	color: white; /*on met les liens en blanc car ils ne le sont pas par défaut*/
+}

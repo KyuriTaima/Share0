@@ -1,0 +1,211 @@
+@font-face {
+    font-family: 'quicksand';
+    src: url('Quicksand-Regular.otf.'); /*on ajoute une nouvelle police*/
+}
+body
+{
+	background-color: rgb(240,240,240); /* on fixe la couleur de l'arrière plan*/
+	font-family: 'quicksand', Arial, sans-serif; /* On choisi la police d'écriture*/
+	color: white; /*On choisit la couleur des écritures*/
+	/*Permet de ne laisser aucun espaces entre le corps de la page et les bords du navigateur*/
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+#blocpage
+{
+	display: flex; /* On créé la flexbox */
+	flex-direction: row; 
+	flex-wrap: wrap; /* permet de faire que les éléments qui dépassent reviennent à la ligne */
+	margin-left: 0px; /* Permet de ne pas avoir de marge sur les côtés */
+	margin-right: 0px;
+}
+header
+{
+	/*gère la largeur, la couleur de fond et la façon dont sont affichés les éléments dans l'en-tête*/
+	display: flex;
+	background-color: rgb(27,41,99);
+	width: 100%;
+	height:3.75em;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	z-index: 1;
+}
+#header
+{
+	/* fixe l'en-tête en haut collé contre les bords */
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 0;
+	z-index: 2; /*Permet de faire passer les articles en dessous de l'en tête lorsqu'on scroll vers le bas*/
+}
+#header_left
+{
+	/*décale le "SHARE0" en haut à gauche pour qu'il ne soit pas collé contre le bord*/
+	position: relative;
+	left: 0.5em;
+}
+#header_right
+{
+	display: flex; /* Permet d'avoir les éléments ordonnés en ligne*/
+
+}
+
+.bouton
+{
+	font-weight: bold; /*Met en gras les boutons et créé une marge (principalement pour séparer les boutons entre eux)*/
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+#bloc_principal
+{
+	position: absolute; /* Positionne le bloc principal*/
+	top:6em;
+	left: 1em;
+}
+img {
+  display: block; /* permet de bloquer l'affichage prédéfini des images et de les adapter aux conteneurs */
+  width: 100%;
+  height: auto;
+}
+a
+{
+	color: white;
+	text-decoration: none; /*supprime le formatage des liens*/
+}
+aside
+{
+	/*fixe la couleur des asides à la même couleur que le fond, permet que la disposition des éléments soit en colonnes et centrés*/
+	display: flex;
+	background: rgb(240,240,240);
+	color: rgb(15,15,15);
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	max-width: 20em ;
+	flex-wrap: wrap;
+}
+#asides
+{
+	position: fixed; /* les asides ne bougent pas avec le scrolling*/
+}
+.image_aside
+{
+	/* fixe le format des images dans les asides */
+	margin: auto;
+	margin-bottom: 1em;
+	width: 8em;
+	height: 8em;
+}
+.titre_aside
+{
+	margin: auto; /* centre le titre */
+}
+#aside1
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 1px solid rgba(100,100,100, 0.7); /* créé une ligne grise entre les deux asides */
+}
+.images_articles
+{
+	/* fixe le format des images dans les articles */
+	max-width:40em;
+	max-height: 40em;
+	margin: auto;
+	padding-top: 3em;
+	padding-bottom: 3em;
+}
+.img_art
+{
+	max-height:100%;
+	max-width:100%;
+}
+article
+{
+	border:1px rgba(100,100,100,0.5) solid; /* créé une bordure pour les articles */
+	width: 30%; /* fixe la taille des articles */
+	height:40%;
+	color: rgb(100,100,100); /* fixe la couleur de fond des articles */
+	display: flex;
+	justify-content: flex-start; /* gère la disposition des éléments des articles */
+	flex-wrap: wrap;
+	overflow: hide;
+	flex-direction: row;
+	background:white;
+	margin-top: 25px;
+	margin-right: 25px;
+	z-index: 10; /* permet aux articles de passer en dessous de l'en-tête*/
+}
+footer
+{
+	position: fixed; /* fixe le pied-de-page pour qu'il bouge avec le scroll*/
+	bottom: 0;/*fixe le footer tout en bas */
+	display: flex;
+	background-color: rgb(27,41,99);
+	width: 100%;
+	height:70px;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	z-index: 2;
+}
+#menu
+{
+	display: flex;	/* centre les éléments du menu de navigation au centre du footer */
+	align-items: center;
+	justify-content: center;
+	list-style: none; /* supprime le formatage de la liste à puce dans le menu de navigation */
+}
+
+ul
+{
+	list-style: none; /* supprime le formatage de la liste à puce */
+}
+
+/* Formatages complémentaires sur les articles */
+#articles
+{
+	position: relative;
+	left: 25em ;
+	width: 180em;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	z-index: 1;
+	margin-bottom: 10em;
+	text-align: justify;
+}
+article
+{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+/* Créé deux lignes à droite et en bas du titre de l'article */
+.titre_article
+{
+	padding: 2em;
+	border-right: 1px rgba(100,100,100,0.7) solid;
+	border-bottom: 1px rgba(100,100,100,0.7) solid;
+}
+/* fixe la bordure intérieure*/
+.infos_auteur
+{
+	padding: 2em;
+}
+/* fixe les marges du contenu de l'article */
+.texte_article
+{
+	margin-left: 3em;
+	margin-right: 3em;
+	margin-top: 3em;
+	margin-bottom: 3em;
+}
